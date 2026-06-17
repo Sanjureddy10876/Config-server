@@ -34,7 +34,7 @@ spring:
               packages: "*"
             value:
               default:
-                type: com.pickup.dto.PaymentSuccessEvent
+                type: com.pickup.dto.PickupCompletedEvent
             use:
               type:
                 headers: false              
