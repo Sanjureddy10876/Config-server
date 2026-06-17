@@ -31,6 +31,12 @@ spring:
           json:
             trusted:
               packages: "*"
+            value:
+              default:
+                type: com.delivery.dto.DeliveryCompletedEvent
+            use:
+              type:
+                headers: false 
 
   mail:
     host: smtp.gmail.com
