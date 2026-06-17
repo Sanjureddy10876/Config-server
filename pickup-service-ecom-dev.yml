@@ -31,6 +31,9 @@ spring:
           json:
             trusted:
               packages: "*"
+            value:
+              default:
+                type: com.pickup.dto.PaymentSuccessEvent
             use:
               type:
                 headers: false
