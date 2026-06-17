@@ -26,6 +26,7 @@ spring:
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+
       properties:
         spring:
           json:
@@ -33,16 +34,16 @@ spring:
               packages: "*"
             value:
               default:
-                type: com.delivery.dto.DeliveryCompletedEvent
+                type: com.notification.dto.DeliveryCompletedEvent
             use:
               type:
-                headers: false 
+                headers: false
 
   mail:
     host: smtp.gmail.com
     port: 587
     username: onhit737@gmail.com
-    password: Pro@1234$
+    password: Pro1234$
 
     properties:
       mail:
