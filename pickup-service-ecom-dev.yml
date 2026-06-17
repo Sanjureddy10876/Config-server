@@ -22,7 +22,7 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
     consumer:
-      group-id: payment-service-group
+      group-id: pickup-group-v2
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
@@ -31,6 +31,9 @@ spring:
           json:
             trusted:
               packages: "*"
+            use:
+              type:
+                headers: false
 
 server:
   port: 8089
