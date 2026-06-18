@@ -37,4 +37,4 @@ logging:
     level: "%5p [${spring.application.name:},traceId=%X{traceId:-},spanId=%X{spanId:-}]"
 
 server:
-  port: 8083
+  port: 8090
