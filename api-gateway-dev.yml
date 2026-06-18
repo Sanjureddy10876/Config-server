@@ -1,0 +1,45 @@
+server:
+  port: 8089
+
+spring:
+  application:
+    name: api-gateway
+
+  config:
+    import: "configserver:http://localhost:8888"
+
+  profiles:
+    active: dev
+
+  cloud:
+    gateway:
+      routes:
+        - id: cart-service
+          uri: lb://cart-service-ecom
+          predicates:
+            - Path=/cart/**
+
+        - id: order-service
+          uri: lb://order-service-ecom
+          predicates:
+            - Path=/orders/**
+
+        - id: payment-service
+          uri: lb://payment-service-ecom
+          predicates:
+            - Path=/payments/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway
+
+logging:
+  level:
+    org.springframework.cloud.gateway: INFO
