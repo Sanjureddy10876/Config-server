@@ -28,6 +28,7 @@ spring:
           uri: lb://payment-service-ecom
           predicates:
             - Path=/payments/**
+            
         - id: auth-service
           uri: lb://auth-service
           predicates:
